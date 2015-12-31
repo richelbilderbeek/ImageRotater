@@ -18,7 +18,7 @@
 ribi::QtImageRotaterMainDialog::QtImageRotaterMainDialog(QWidget *parent)
   : QtHideAndShowDialog(parent),
     ui(new Ui::QtImageRotaterMainDialog),
-    m_source(":/imagerotater/images/ToolImageRotaterTest.png"),
+    m_source(":/imagerotater/images/ImageRotaterTest.png"),
     m_target(nullptr)
 {
   #ifndef NDEBUG
@@ -118,7 +118,7 @@ void ribi::QtImageRotaterMainDialog::Test() noexcept
   }
   ImageRotaterMainDialog();
   const TestTimer test_timer(__func__,__FILE__,1.0);
-  const QImage source(":/imagerotater/images/ToolImageRotaterTest.png");
+  const QImage source(":/imagerotater/images/ImageRotaterTest.png");
   assert(!source.isNull());
   QImage target(source);
   ImageRotaterMainDialog::Rotate(

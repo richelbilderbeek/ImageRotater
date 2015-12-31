@@ -13,7 +13,6 @@
 #include "fileio.h"
 #include "imagecanvas.h"
 #include "imagerotatermaindialog.h"
-#include "richelbilderbeekprogram.h"
 #include "testtimer.h"
 #include "trace.h"
 #pragma GCC diagnostic pop
@@ -80,7 +79,7 @@ ribi::About ribi::ImageRotaterMenuDialog::GetAbout() const noexcept
     "Richel Bilderbeek",
     "ImageRotater",
     "tool to rotate images",
-    "the 6th of February 2014",
+    "December 31st of 2015",
     "2007-2015",
     "http://www.richelbilderbeek.nl/ToolImageRotater.htm",
     GetVersion(),
@@ -109,18 +108,9 @@ ribi::Help ribi::ImageRotaterMenuDialog::GetHelp() const noexcept
   );
 }
 
-boost::shared_ptr<const ribi::Program> ribi::ImageRotaterMenuDialog::GetProgram() const noexcept
-{
-  boost::shared_ptr<const ribi::Program> p {
-    new ribi::ProgramImageRotater
-  };
-  assert(p);
-  return p;
-}
-
 std::string ribi::ImageRotaterMenuDialog::GetVersion() const noexcept
 {
-  return "2.1";
+  return "3.0";
 }
 
 std::vector<std::string> ribi::ImageRotaterMenuDialog::GetVersionHistory() const noexcept
@@ -128,7 +118,8 @@ std::vector<std::string> ribi::ImageRotaterMenuDialog::GetVersionHistory() const
   return {
     "2007-xx-xx: version 1.0: initial Windows-only version",
     "2013-11-29: version 2.0: port to Qt",
-    "2014-02-06: version 2.1: added command-line version"
+    "2014-02-06: version 2.1: added command-line version",
+    "2015-12-31: version 3.0: moved to own GitHub"
   };
 }
 
@@ -140,7 +131,10 @@ void ribi::ImageRotaterMenuDialog::Test() noexcept
     if (is_tested) return;
     is_tested = true;
   }
-  fileio::FileIo();
+  {
+    fileio::FileIo();
+    ImageCanvas();
+  }
 
   const TestTimer test_timer(__func__,__FILE__,1.0);
   ImageRotaterMenuDialog d;

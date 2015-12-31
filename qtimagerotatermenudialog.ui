@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>171</width>
-    <height>294</height>
+    <width>176</width>
+    <height>305</height>
    </rect>
   </property>
   <property name="font">
@@ -40,7 +40,7 @@ QPushButton { font: 48px &quot;Courier New&quot;, courier, monospace }</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="ToolImageRotater.qrc">:/imagerotater/images/ToolImageRotaterTitle.png</pixmap>
+      <pixmap resource="ImageRotater.qrc">:/imagerotater/images/ImageRotaterTitle.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>false</bool>
@@ -97,7 +97,7 @@ QPushButton { font: 48px &quot;Courier New&quot;, courier, monospace }</string>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="ToolImageRotater.qrc"/>
+  <include location="ImageRotater.qrc"/>
  </resources>
  <connections/>
 </ui>
