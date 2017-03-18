@@ -36,10 +36,6 @@ private:
   QImage m_source;
   QLabel * m_target;
 
-  #ifndef NDEBUG
-  static void Test() noexcept;
-  #endif
-
   double GetAngle() const noexcept;
 
   void OnAnyChange();

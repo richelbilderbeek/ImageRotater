@@ -82,8 +82,6 @@ ribi::About ribi::ImageRotaterMenuDialog::GetAbout() const noexcept
   );
   a.AddLibrary("Canvas version: " + Canvas::GetVersion());
   a.AddLibrary("ImageCanvas version: " + ImageCanvas::GetVersion());
-  a.AddLibrary("TestTimer version: " + TestTimer::GetVersion());
-  a.AddLibrary("Trace version: " + Trace::GetVersion());
   return a;
 }
 
@@ -117,15 +115,3 @@ std::vector<std::string> ribi::ImageRotaterMenuDialog::GetVersionHistory() const
     "2015-12-31: version 3.0: moved to own GitHub"
   };
 }
-
-#ifndef NDEBUG
-void ribi::ImageRotaterMenuDialog::Test() noexcept
-{
-  ImageRotaterMenuDialog d;
-  const std::string filename { fileio::FileIo().GetTempFileName(".png") };
-  QFile file(":/imagerotater/images/R.png");
-  file.copy(filename.c_str());
-  d.Execute( { "ImageRotaterMenuDialog", "-f", filename, "-r", "30.0" } );
-  fileio::FileIo().DeleteFile(filename);
-}
-#endif

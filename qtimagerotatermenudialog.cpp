@@ -4,7 +4,6 @@
 
 #include "qtaboutdialog.h"
 #include "imagerotatermenudialog.h"
-#include "testtimer.h"
 #include "qtimagerotatermaindialog.h"
 #include "ui_qtimagerotatermenudialog.h"
 #include "trace.h"
@@ -14,9 +13,6 @@ ribi::QtImageRotaterMenuDialog::QtImageRotaterMenuDialog(QWidget *parent) :
     QtHideAndShowDialog(parent),
     ui(new Ui::QtImageRotaterMenuDialog)
 {
-  #ifndef NDEBUG
-  Test();
-  #endif
   ui->setupUi(this);
 }
 
@@ -41,16 +37,3 @@ void ribi::QtImageRotaterMenuDialog::on_button_quit_clicked()
 {
   this->close();
 }
-
-#ifndef NDEBUG
-void ribi::QtImageRotaterMenuDialog::Test() noexcept
-{
-  {
-    static bool is_tested{false};
-    if (is_tested) return;
-    is_tested = true;
-  }
-  QtImageRotaterMainDialog();
-  const TestTimer test_timer(__func__,__FILE__,1.0);
-}
-#endif
