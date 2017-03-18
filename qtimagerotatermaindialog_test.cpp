@@ -17,7 +17,6 @@
 
 void ribi_QtImageRotaterMainDialog_Test() noexcept
 {
-  ImageRotaterMainDialog();
   const QImage source(":/imagerotater/images/ImageRotaterTest.png");
   assert(!source.isNull());
   QImage target(source);
