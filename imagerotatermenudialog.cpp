@@ -13,15 +13,10 @@
 #include "fileio.h"
 #include "imagecanvas.h"
 #include "imagerotatermaindialog.h"
-#include "testtimer.h"
-#include "trace.h"
 #pragma GCC diagnostic pop
 
 int ribi::ImageRotaterMenuDialog::ExecuteSpecific(const std::vector<std::string>& argv) noexcept
 {
-  #ifndef NDEBUG
-  Test();
-  #endif
   const int argc = static_cast<int>(argv.size());
   if (argc != 5
     || argv[1] == argv[3]
@@ -126,17 +121,6 @@ std::vector<std::string> ribi::ImageRotaterMenuDialog::GetVersionHistory() const
 #ifndef NDEBUG
 void ribi::ImageRotaterMenuDialog::Test() noexcept
 {
-  {
-    static bool is_tested{false};
-    if (is_tested) return;
-    is_tested = true;
-  }
-  {
-    fileio::FileIo();
-    ImageCanvas();
-  }
-
-  const TestTimer test_timer(__func__,__FILE__,1.0);
   ImageRotaterMenuDialog d;
   const std::string filename { fileio::FileIo().GetTempFileName(".png") };
   QFile file(":/imagerotater/images/R.png");
