@@ -6,7 +6,7 @@
 #include "imagerotatermenudialog.h"
 #include "qtimagerotatermaindialog.h"
 #include "ui_qtimagerotatermenudialog.h"
-#include "trace.h"
+
 #pragma GCC diagnostic pop
 
 ribi::QtImageRotaterMenuDialog::QtImageRotaterMenuDialog(QWidget *parent) :
