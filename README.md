@@ -1,5 +1,7 @@
 # ImageRotater
 
+[![Codecov](https://codecov.io/gh/richelbilderbeek/ImageRotater/branch/main/graph/badge.svg)](https://codecov.io/gh/richelbilderbeek/ImageRotater)
+
 [Go to the nicely rendered website](https://richelbilderbeek.github.io/ImageRotater/).
 
 Tool to rotate images under any angle using the C++ Qt library.
